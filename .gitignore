@@ -15,3 +15,7 @@
 .DS_Store
 
 .prettierignore
+
+# Local Netlify folder
+.netlify
+node_modules

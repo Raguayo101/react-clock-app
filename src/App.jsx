@@ -12,9 +12,9 @@ function App() {
   const [city, setCity] = useState(null);
   const [worldTime, setWorldTime] = useState([]);
 
-  let quoteApi = `https://api.quotable.io/random`;
+  let quoteApi = `http://api.quotable.io/random`;
   let timeZoneApi = `http://worldtimeapi.org/api/ip`;
-  let geoApi = `https://api.ipbase.com/v2/info?apikey=oVXqAzmQw28Kjtd7puYV80186pQxc3wqw65do0VX&ip=1.1.1.1`;
+  let geoApi = `http://api.ipbase.com/v2/info?apikey=oVXqAzmQw28Kjtd7puYV80186pQxc3wqw65do0VX&ip=1.1.1.1`;
 
   const getQuoteApi = (Api) => {
     fetch(Api)
@@ -63,21 +63,17 @@ function App() {
   useEffect(() => {
     getTimeApi(timeZoneApi);
   }, []);
-  console.log(worldTime);
 
   useEffect(() => {
     getQuoteApi(quoteApi);
-    console.log(quotes);
   }, [refreshData]);
 
   const handleOnclickDark = () => {
     setDarkMode((prevState) => !prevState);
-    console.log(darkMode);
   };
 
   const handleOnClickInfo = () => {
     setModeInfo((prevState) => !prevState);
-    console.log(modeInfo);
   };
 
   const handleOnClickRefresh = () => {
